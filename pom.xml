@@ -17,7 +17,7 @@
     <junit.version>5.10.2</junit.version>
     <hibernate.version>6.6.38.Final</hibernate.version>
     <javaee.version>8.0</javaee.version>
-    <struts.version>6.8.0</struts.version>
+    <struts.version>1.3.10</struts.version>
   </properties>
 
   <dependencies>
@@ -36,32 +36,33 @@
     </dependency>
 
     <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+    <!-- ================== STRUTS ================== -->
+
+    <dependency>
       <groupId>org.apache.struts</groupId>
-      <artifactId>struts2-core</artifactId>
+      <artifactId>struts-core</artifactId>
       <version>${struts.version}</version>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.struts</groupId>
-      <artifactId>struts2-convention-plugin</artifactId>
+      <artifactId>struts-extras</artifactId>
       <version>${struts.version}</version>
-      <scope>compile</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.struts</groupId>
-      <artifactId>struts2-cdi-plugin</artifactId>
+      <artifactId>struts-taglib</artifactId>
       <version>${struts.version}</version>
-      <scope>compile</scope>
     </dependency>
 
-    <dependency>
-      <groupId>org.apache.struts</groupId>
-      <artifactId>struts2-junit-plugin</artifactId>
-      <version>${struts.version}</version>
-      <scope>test</scope>
-    </dependency>
+    <!-- ================== END STRUTS ================== -->
 
     <dependency>
       <groupId>org.hibernate.orm</groupId>

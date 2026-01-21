@@ -1,30 +1,16 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<!doctype html>
 <html>
 <head>
     <title>Cards</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      .card {
-        border: 1px solid #ccc;
-        padding: 12px;
-        margin-bottom: 10px;
-        border-radius: 4px;
-      }
-      .topic {
-        font-weight: bold;
-        color: #555;
-      }
-      .question {
-        margin-top: 6px;
-        font-weight: bold;
-      }
-      .answer {
-        margin-top: 4px;
-      }
+      body {font-family: Arial, sans-serif;}
+      .card {border: 1px solid #ccc;padding: 12px;margin-bottom: 10px;border-radius: 4px;}
+      .topic {font-weight: bold; color: #4126f1;}
+      .question {margin-top: 6px; font-weight: bold; }
+      .answer {margin-top: 4px;}
     </style>
 </head>
 <body>
@@ -38,7 +24,7 @@
         <c:forEach var="card" items="${cards}">
             <div class="card">
                 <div class="topic">
-                    Topic: ${card.topicDto}
+                    Topic: ${card.topicDto.name}
                 </div>
                 <div class="question">
                     Q: ${card.question}

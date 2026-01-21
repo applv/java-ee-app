@@ -61,7 +61,7 @@ public class CardServiceImpl implements CardService {
 
   @Transactional
   @Override
-  public List<CardDto> findAllByValue(String value) {
+  public List<CardDto> findByValue(String value) {
     return cardMapper.mapToDto(cardRepository.findAllByValue(value));
   }
 

@@ -12,7 +12,7 @@ public interface CardService {
 
   List<CardDto> findAllByTopicName(String topicName);
 
-  List<CardDto> findAllByValue(String value);
+  List<CardDto> findByValue(String value);
 
   List<CardDto> findAllByTopicNameAndValue(String topicName, String value);
 

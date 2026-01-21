@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+  "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+  <data-sources />
+
+  <form-beans>
+    <form-bean name="findCardsBySubstrForm" type="com.applv.sobes.wildflyapp.web.form.FindCardsBySubstrForm"/>
+  </form-beans>
+
+  <global-exceptions />
+
+  <action-mappings>
+    <action path="/cards"
+      type="com.applv.sobes.wildflyapp.web.action.FindCardsBySubstrAction"
+      name="findCardsBySubstrForm"
+      scope="request"
+      input="/WEB-INF/jsp/index.jsp">
+      <forward name="success" path="/WEB-INF/jsp/cards.jsp"/>
+    </action>
+
+    <action path="/showCards"
+      type="org.apache.struts.actions.ForwardAction"
+      parameter="/WEB-INF/jsp/cards.jsp" />
+  </action-mappings>
+
+</struts-config>
