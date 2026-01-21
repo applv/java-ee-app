@@ -1,0 +1,31 @@
+services:
+
+  wildfly:
+    image: oracle.linux.v9-wildfly:latest
+    build:
+      dockerfile: ./Dockerfile
+      args:
+        - ARG_WILDFLY_USERNAME=${WILDFLY_USER}
+        - ARG_WILDFLY_PASSWORD=${WILDFLY_PASSWORD}
+        - ARG_WILDFLY_DEBUG_FLAG=${WILDFLY_DEBUG_FLAG}
+        - ARG_WILDFLY_LINK=${WILDFLY_LINK}
+        - ARG_POSTGRES_JDBC_LINK=${POSTGRES_JDBC_LINK}
+    env_file:
+      - .env
+    container_name: wildfly
+    restart: always
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+      - "8443:8443"
+      - "9993:9993"
+      - "8787:8787"
+    networks:
+      tutor-net:
+
+networks:
+  tutor-net:
+    external: true
+
+#  docker compose up
+#  links: 172.20.0.3:8080, localhost:8080
